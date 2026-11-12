@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bluetti-chisme"
+version = "0.1.0"
+description = "Explorador Bluetooth local para BLUETTI Elite 100 V2"
+requires-python = ">=3.10"
+dependencies = ["bleak>=0.22,<2", "fastapi>=0.115,<1", "uvicorn>=0.30,<1"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-asyncio>=0.24", "httpx>=0.27"]
+
+[tool.setuptools.packages.find]
+include = ["explorer*", "bluetti_monitor*"]
+
+[tool.setuptools.package-data]
+explorer = ["static/*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
