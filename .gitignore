@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+.env
+
+bluetti_device_licence.csv
+bluetti_crypt.py
+_bluetti_crypt*
+*.so
+*.dll
+*.pyd
